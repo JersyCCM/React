@@ -8,11 +8,10 @@ function App() {
 
   return (
     <>
+
       <NavBar/>
 
-      <CartWidget/>
-
-      <ItemListContainer saludo="Bienvenidos"/>
+      <ItemListContainer greeting="Bienvenidos"/>
 
 
     </>

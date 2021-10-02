@@ -1,3 +1,8 @@
+
+body{
+    background-color: rgb(29, 27, 27);
+}
+
 .estilosList{
     display: flex;
     list-style: none;
@@ -48,6 +53,16 @@ margin: 10px;
 .texto {
    
     color: black;
+    background-color: rgb(163, 26, 26);
     font-weight: bold;
     text-transform: capitalize;
      }
+
+.carrito{
+    width: 50px; 
+    height: 50px;
+    float: right;
+
+   
+
+}
