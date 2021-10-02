@@ -1,11 +1,21 @@
-import './App.css';
+import { NavBar } from "./components/NavBar/Navbar"
+import {ItemListContainer} from "./components/Container/ItemListContainer"
+import { CartWidget } from "./components/NavBar/CartWidget";
+
 
 function App() {
+
+
   return (
-    <div className="App">
-     <h1>Mi aplicación React</h1>
-     <p>Ricarnes</p>
-    </div>
+    <>
+      <NavBar/>
+
+      <CartWidget/>
+
+      <ItemListContainer saludo="Bienvenidos"/>
+
+
+    </>
   );
 }
 

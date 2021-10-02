@@ -1,0 +1,53 @@
+.estilosList{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px; 
+    
+
+}
+
+.tamaño{
+    width: 250px; 
+    height: 250px;
+    margin-right: 20px;
+}
+
+.estilosli{
+margin: 10px;
+}
+
+.nav{
+    position: sticky;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(163, 26, 26);
+  
+}
+
+.navIt{
+    display: inline-block;
+    position: relative;
+    font-size: 17px;
+    padding: 10px 20px; 
+    
+}
+
+.titulo{
+    font-family: 'Sansita Swashed', cursiva;
+    color: rgb(163, 26, 26);
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+}
+
+.texto {
+   
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize;
+     }
