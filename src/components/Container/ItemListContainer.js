@@ -4,7 +4,7 @@ import "./estilos.css"
 
 export const ItemListContainer = (props) => {
     console.log(props)
-    
+
     return(
         <div>
         <ul className="estilosList">
@@ -12,7 +12,6 @@ export const ItemListContainer = (props) => {
             <li><p className="texto">Bife de chorizo</p><img className="tamaño" src={img[2]}/></li>
             <li><p className="texto">Pollo</p><img className="tamaño" src={img[1]}/></li>
             <li><p className="texto"> Cerdo</p><img className="tamaño" src={img[3]}/></li>
-
 
         </ul>
         </div>
