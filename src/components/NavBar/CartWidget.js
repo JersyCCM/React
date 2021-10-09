@@ -1,5 +1,6 @@
 import React from "react";
-import {img} from "../img"
+import { FaShoppingCart} from "react-icons/fa";
+import "./NavBar.css"
 
 
 
@@ -7,7 +8,14 @@ export const CartWidget = () =>{
 
     return(
         <div>
-       <img className="carrito" src={img[4]} alt="Carrito"/>
+            <FaShoppingCart className= "widget"/>
         </div>
     )
 }
+
+
+
+
+
+
+//<img className="carrito" src={img[4]} alt="Carrito"/>

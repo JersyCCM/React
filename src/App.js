@@ -1,7 +1,7 @@
-import { NavBar } from "./components/NavBar/Navbar"
+import { NavBar } from "./components/NavBar/NavBar"
 import {ItemListContainer} from "./components/Container/ItemListContainer"
-import { CartWidget } from "./components/NavBar/CartWidget";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css"
 
 function App() {
 
@@ -11,9 +11,10 @@ function App() {
 
       <NavBar/>
 
+   
       <ItemListContainer greeting="Bienvenidos"/>
-
-
+    
+    
     </>
   );
 }

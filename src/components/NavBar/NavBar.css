@@ -1,0 +1,22 @@
+.widget{
+    color: white;
+    font-size: 30px;
+}
+
+.nav{
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.brand{
+    display: inline-block;
+    padding: 50px;
+}
+
+.estiloLogo{
+    text-align: left;
+    padding: 10px 10px;
+    width: 130px; 
+    height: auto;
+    margin-left: 20px;
+}
