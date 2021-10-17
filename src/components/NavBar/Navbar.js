@@ -3,6 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import {CartWidget} from './CartWidget'
 import './NavBar.css'
 import  { Logo }   from "../../data/img"
+import { Link, NavLink } from "react-router-dom";
 
 
 
@@ -12,13 +13,20 @@ export const NavBar = () => {
 
     return(
 <Navbar bg="dark" variant="dark" className="nav">
- <Navbar.Brand href="#home"><img className="estiloLogo" src={Logo} alt="Logo" /></Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#carnes">Vacuno</Nav.Link>
-      <Nav.Link href="#avess">Aves</Nav.Link>
-      <Nav.Link href="#cerdo">Cerdo</Nav.Link>
+ <NavLink hexact to="/"><img className="estiloLogo" src={Logo} alt="Logo" /></NavLink>
+    <Nav>
+
+      <NavLink activeClassName={'link'} exact to="/" className="a">Inicio</NavLink>
+      <NavLink activeClassName={'link'} exact to="/productos/vacuno" className="a">Vacuno</NavLink>
+      <NavLink activeClassName={'link'} exact to="/productos/aves" className="a">Aves</NavLink>
+      <NavLink activeClassName={'link'} exact to="/productos/cerdo" className="a">Cerdo</NavLink>
+      <NavLink activeClassName={'link'} exact to="/contacto" className="a">Contacto</NavLink>
+
+      <Link to="/cart" ><CartWidget/></Link>
+
+      
     </Nav>
-    <CartWidget/>
+    
   </Navbar>
     
     
@@ -28,23 +36,5 @@ export const NavBar = () => {
 }
 
 
+
   
-       /*  <header>
-            <h1 className= "titulo">Ricarnes</h1>
-            
-
-        <nav className="nav">
-        
-        <ul className="navList"> 
-        <a className="nav-link navIt texto" href="index.html">RES</a>
-        <a className="nav-link navIt texto" href="index.html">AVES</a>   
-        <a className="nav-link navIt texto" href="index.html">CERDO</a>
-        <CartWidget/>
-        
-        </ul>
-              
-                
-            </nav>
-
-            
-        </header> */
