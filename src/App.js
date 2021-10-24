@@ -10,11 +10,10 @@ import {
   Redirect
 } from 'react-router-dom'
 import { Footer } from "./components/Footer/Footer";
-import { Contacto } from "./components/Container/Contacto/Contacto";
-
-
-
-
+import { Contacto } from "./components/Contacto/Contacto";
+import {CartProvider} from "./context/CartContext"
+import { CartScreen } from './components/CartScreen/CartScreen';
+import { UIProvider } from "./context/UIContext";
 
 
 
@@ -22,13 +21,16 @@ import { Contacto } from "./components/Container/Contacto/Contacto";
 function App() {
 
 
+
   return (
     <>
-    
+
+      <UIProvider>
+      <CartProvider>
       <BrowserRouter>
 
       <NavBar/>
-
+   
       <Switch>
 
       <Route exact path="/">
@@ -43,13 +45,13 @@ function App() {
           <ItemDetailContainer/>
       </Route>
 
-      <Route exact path="/contacto">
-          <h1>Contacto</h1>
-      </Route>
-
-      <Route exact path="/cart">
-          <h1>Carrito</h1>
-      </Route>
+     <Route exact path="/contacto">
+            <Contacto />
+    </Route>
+    
+    <Route exact path="/cart">
+          <CartScreen/>
+    </Route>
 
 
       <Route path="*">
@@ -58,16 +60,13 @@ function App() {
 
       </Switch>
 
-
       <Footer/>
-    
-    
-      
+  
       </BrowserRouter>
 
-      
+      </CartProvider>
     
-    
+      </UIProvider>
     </>
   );
 }

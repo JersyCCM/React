@@ -9,7 +9,7 @@ export const Item = ({id, name, price, img, description, category}) => {
     //console.log(props)
 
     return (
-        <Card style={{ width: '18rem' }} className="m-3">
+        <Card style={{ width: '18rem' }} className="m-4 ">
         <Card.Img variant="top" src={img} className= "tamaño" />
         <Card.Body>
             <Card.Title>{name}</Card.Title>

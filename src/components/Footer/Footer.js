@@ -7,9 +7,9 @@ import {Instagram} from "../../data/img"
 
 export const Footer = () => {
     return (
-        <div>
+        <div className="Position">
 
-<footer className="page-footer font-small pt-4 color">
+<footer className="page-footer font-small pt-4 color ">
 
 <div className="container">
 

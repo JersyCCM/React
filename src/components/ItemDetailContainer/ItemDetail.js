@@ -1,13 +1,32 @@
-import React from 'react'
-import { useHistory } from 'react-router'
+import React, { useContext, useState } from 'react'
+import { useHistory} from 'react-router'
 import "./detail.css"
+import { ItemCount } from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
-export const ItemDetail = ({id, name, price, img, description, category}) => {
+export const ItemDetail = ({id, name, price, img, description, category, stock}) => {
 
 const {goBack} = useHistory()
 
+const {addToCart, isInCart} = useContext(CartContext)
 
+const [cantidad,setCantidad] = useState(0)
+
+const handleAgregar = () => {
+    const newItem = {
+        id,
+        name,
+        price,
+        category,
+        cantidad
+    }
+
+    if(cantidad > 0){
+     addToCart(newItem)
+    }
+}
 
     return (
         <div className="container">
@@ -20,7 +39,25 @@ const {goBack} = useHistory()
             <div className=" descriptionDetail">
             <p className="parrafo">{description} 
             <h4>Precio: ${price}</h4>
-            <button className=" btn btn-primary-outline" onClick={()=> goBack()}>  Volver </button>
+
+            {isInCart(id)
+            ? <Link to ="/cart" className= "btn btn-dark"> Terminar mi compra</Link>
+            :
+
+            <>
+            <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
+
+            <button
+            className= "btn btn-dark mx-3"
+            onClick={handleAgregar}>
+                Agregar
+                 
+                </button>
+            </>
+
+
+            }
+            <button className=" btn btn-dark mx-3" onClick={()=> goBack()}>  Volver </button>
             </p>
             </div>
          
