@@ -11,10 +11,7 @@ export const CartWidget = () => {
 
     return(
 
-        <div style={{
-            visibility: calcularCantidad() === 0 ? "hidden" : "visible"
-        }}>
-        
+        <div>      
             <FaShoppingCart className= "widget"/>
             <span>{calcularCantidad()}</span>
         </div>

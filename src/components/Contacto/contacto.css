@@ -1,3 +1,24 @@
 .contactoDiv{
     display: flex;
 }
+
+.descriptionDetail{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-left: 30px;
+    
+   
+}
+
+
+.imgDetail{
+    width: 500px; 
+    height: 500px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+   
+}
+
+
