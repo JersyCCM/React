@@ -5,7 +5,7 @@ import "./contacto.css"
 export const Form = () => {
     return (
         <div className="container">
-            <h2 class="H2">Queremos estar más cerca de vos, conocer tus comentarios y opiniones</h2>
+            <h2>Queremos estar más cerca de vos, conocer tus comentarios y opiniones</h2>
 
             <form>
             <div className="estiloH">Nombre:</div>

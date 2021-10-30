@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useContext} from "react";
 import { useParams } from "react-router";
 import { UIContext } from "../../context/UIContext";
-import { pedirProductos } from "../../funciones/pedirProductos";
+import { getFirestore } from "../../firebase/config";
 import "./estilos.css"
 import { ItemList } from "./ItemList";
 
@@ -18,21 +18,26 @@ export const ItemListContainer = () => {
     useEffect(()=>{
         setLoading(true)
 
-        pedirProductos()
-            .then((res) => {
+        const db = getFirestore()
+        const productos = categoryId 
+                            ? db.collection('productos').where('category', '==', categoryId)
+                            : db.collection('productos')
 
-                if (categoryId) {
-                    setItems( res.filter( prod => prod.category === categoryId) )
-                } else {
-                    setItems( res )
-                }
-            })
-            .catch((err) => console.log(err))
+            productos.get()
+            .then((response) => {
+                const newItems = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()}
+                })
+
+                setItems(newItems)
+            }) 
+            .catch( err => console.log(err))
             .finally(() => {
-                setLoading(false)
-            })
-
-    }, [categoryId])
+                setLoading(false)}
+            )
+        
+       
+    }, [categoryId, setLoading])
 
 
 
@@ -48,19 +53,24 @@ export const ItemListContainer = () => {
     )
 }
 
+// setLoading(true)
 
-/* 
-return(
-    <div>
-        <h1 className="titulo" >{greeting}</h1>
+        // pedirProductos()
+        //     .then((res) => {
 
-    <ul className="estilosList">
-        <li><p className="texto">Carne Picada</p><img className="tamaño" src={img[0]} alt="CarneP"/></li>
-        <li><p className="texto">Bife de chorizo</p><img className="tamaño" src={img[2]} alt="Bife"/></li>
-        <li><p className="texto">Pollo</p><img className="tamaño" src={img[1]} alt="Pollo"/></li>
-        <li><p className="texto"> Cerdo</p><img className="tamaño" src={img[3]} alt="Cerdo"/></li>
+        //         if (categoryId) {
+        //             setItems( res.filter( prod => prod.category === categoryId) )
+        //         } else {
+        //             setItems( res )
+        //         }
+        //     })
+        //     .catch((err) => console.log(err))
+        //     .finally(() => {
+        //         setLoading(false)
+        //     })
 
-    </ul>
-    </div>
-) */
+
+
+
+
 
