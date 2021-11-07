@@ -3,6 +3,7 @@
    
     margin-left: 45%;
     
+    
 }
 
 .titulo{
@@ -52,4 +53,17 @@
     color: rgb(161, 29, 29);
     font-weight: bold;
     padding: 1%;
+}
+
+.Ir{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 22px;
+    padding: 10px;
+    border: solid 3px black;
+}
+
+.alert{
+    margin-bottom: 10%;
 }

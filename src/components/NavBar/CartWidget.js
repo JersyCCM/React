@@ -11,7 +11,7 @@ export const CartWidget = () => {
 
     return(
 
-        <div style= {{
+        <div className="number" style= {{
             visibility: calcularCantidad() === 0 ? "hidden" : "visible"
         }}>
 

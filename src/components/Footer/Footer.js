@@ -19,8 +19,8 @@ export const Footer = () => {
 
       <div className="container footerCenter">
                     <p className="text">Seguinos por:</p>
-                    <a target="_blank" href="https://www.facebook.com/Ricarenesmaracay"><img src={Facebook} alt="Icono" /> Facebook: Ricarnesmaracay</a>
-                    <a target="_blank" href="https://www.instagram.com/ricarnes.maracay/"> <img src={Instagram} alt="Icono" />Instagram: @ricarnes.maracay</a>
+                    <a target="_blank" href="https://www.facebook.com/Ricarenesmaracay" className="text" ><img src={Facebook} alt="Icono" /> Facebook: Ricarnesmaracay</a>
+                    <a target="_blank" href="https://www.instagram.com/ricarnes.maracay/" className="text"> <img src={Instagram} alt="Icono" />Instagram: @ricarnes.maracay</a>
    
       </div>
       

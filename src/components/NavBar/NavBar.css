@@ -34,3 +34,10 @@ font-size: 30px;
 .cart{
     align-items: center;
 }
+
+.number{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+}

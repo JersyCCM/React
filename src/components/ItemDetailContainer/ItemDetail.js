@@ -32,12 +32,12 @@ const handleAgregar = () => {
         <div className="container">
             <h2 className= "titulo">{name}</h2>
 
-            <div className="product-detail">
+           <div className="productD container">
 
             <img className= "imgDetail" src={img}alt={name}></img>
 
             <div className=" descriptionDetail">
-            <p className="parrafo">{description} 
+            <p className="estiloParrafo">{description} 
             <h4>Precio: ${price}</h4>
 
             {isInCart(id)
@@ -48,18 +48,22 @@ const handleAgregar = () => {
             <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
 
             <button
-            className= "btn btn-dark mx-3"
+            className= "btn btn-dark mx-3 my-3"
             onClick={handleAgregar}>
                 Agregar
                  
                 </button>
+
+            
             </>
 
 
             }
-            <button className=" btn btn-dark mx-3" onClick={()=> goBack()}>  Volver </button>
+            <button className=" btn btn-dark mx-3 my-3" onClick={()=> goBack()}>  Volver </button>
             </p>
+
             </div>
+
          
             </div>
             </div>

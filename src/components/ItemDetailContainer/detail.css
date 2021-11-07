@@ -7,18 +7,8 @@
    
 }
 
-.titulo{
-    font-family: 'Sansita Swashed', cursiva;
-    color: white;
-    font-size: 50px;
-    text-align: center;
-    font-style: italic;
-    margin-top: 20px;
-    font-weight: bold;
-    background-color: rgb(29, 28, 28);
-}
 
-.product-detail{
+.productD{
     display: flex;
 }
 
@@ -31,13 +21,13 @@
    
 }
 
-.parrafo{
+.estiloParrafo{
     text-decoration: none;
     color: rgb(0, 0, 0);
     margin-top: 80px;
     font-size: 20px;
-    border: solid 2px black;
+    border: solid 3px black;
     background-color: white;
-    padding: 2px;
+    padding: 3px;
 }
 

@@ -3,16 +3,17 @@ import { CartContext } from '../../context/CartContext'
 import { BsFillTrashFill } from 'react-icons/bs'
 import "./cart.css"
 import { ItemCount } from '../ItemCount/ItemCount'
+import { Link} from "react-router-dom";
 
 
 
 
 export const CartScreen = ({stock}) => {
 
-    const {carrito, vaciarCarrito, removeItem, calcularTotal}= useContext(CartContext)
+    const {carrito, vaciarCarrito, removeItem, calcularTotal , push}= useContext(CartContext)
 
-    
-    const {addToCart, isInCart} = useContext(CartContext)
+
+    const {addToCart} = useContext(CartContext)
 
     const [cantidad,setCantidad] = useState(0)
 
@@ -31,6 +32,17 @@ export const CartScreen = ({stock}) => {
 
     return (
         <div className="container my-5">
+
+        {
+            carrito.length === 0
+            ? <>
+                <h2 className="alert titulo">No hay productos en tu carrito</h2>
+                <Link to= "/" className= "btn-btn dark link Ir mb-5" >Ir a comprar</Link>
+
+                </>
+            :
+
+            <>
             <h2 className="alingCart titulo">Mi compra</h2>
             
         {
@@ -42,14 +54,14 @@ export const CartScreen = ({stock}) => {
                     <p>Cantidad: {prod.cantidad}</p>
                     <p>Precio: {prod.price * prod.cantidad}</p>
                     <>
-            <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
+            {/* <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
 
             <button
             className= "btn btn-dark mx-3"
             onClick={handleAgregar}>
                 Agregar
                  
-                </button>
+                </button> */}
             </>
 
                     <div className=" descriptionDetail">
@@ -65,15 +77,21 @@ export const CartScreen = ({stock}) => {
             ))
         }
            
-        <h3 className="Cart Total">Precio Total: ${calcularTotal()} 
+        <h3 className="Cart Total">Precio Total: ${calcularTotal()}  </h3>
+
+
         <button
         className="btn btn-dark buttonAling"
         onClick={vaciarCarrito}>
             Vaciar Carrito
         </button>
-        </h3>
-        </div>
+
+
         
+                    </>
+            } 
+
+        </div>
     )
 }
 
