@@ -54,14 +54,7 @@ export const CartScreen = ({stock}) => {
                     <p>Cantidad: {prod.cantidad}</p>
                     <p>Precio: {prod.price * prod.cantidad}</p>
                     <>
-            {/* <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
-
-            <button
-            className= "btn btn-dark mx-3"
-            onClick={handleAgregar}>
-                Agregar
-                 
-                </button> */}
+           
             </>
 
                     <div className=" descriptionDetail">
@@ -95,7 +88,7 @@ export const CartScreen = ({stock}) => {
                     </>
             } 
 
-        </div>
+    </div>
     )
 }
 
